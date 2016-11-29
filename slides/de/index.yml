@@ -1,0 +1,3 @@
+- source: ./title.md
+  data:
+    bespoke-hash: vue

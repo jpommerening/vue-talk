@@ -1,0 +1,51 @@
+@import 'theme.scss';
+@import 'highlight.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono');
+@import url('https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js');
+
+
+
+.name {
+  font-family: 'Dosis';
+}
+
+pre {
+  min-height: 1em;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.large {
+  font-size: 1.2em;
+}
+
+.tool-logo {
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 24%;
+}
+
+.tool-logo img {
+  max-width: 2em;
+  height: 2em;
+}
+
+h1.name {
+  font-style: normal;
+}
+
+img.plain {
+  border: 0;
+  max-width: 30%;
+}
+
+.tool-logo {
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 22%;
+}
+
