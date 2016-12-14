@@ -27,12 +27,32 @@ function init(slides) {
       classes(),
       fullscreen(),
       hash(),
-      keys(),
+      keys('vertical'),
       notes({ visible: false }),
       touch()
    ] );
 
    deck.slide(slide);
+
+   function noFullscreenToggle(e) {
+      var key = e.which;
+      if( e.ctrlKey || e.shiftKey || e.altKey || e.metaKey ) {
+         return;
+      }
+      if( key === 70 ) {
+         e.stopPropagation();
+      }
+   }
+   deck.on('activate', function(slide) {
+      if( slide.index === 2 ) {
+         container.addEventListener('keydown', noFullscreenToggle);
+      }
+   });
+   deck.on('deactivate', function(slide) {
+      if( slide.index === 2 ) {
+         container.removeEventListener('keydown', noFullscreenToggle);
+      }
+   });
 }
 
 slides('de', init);

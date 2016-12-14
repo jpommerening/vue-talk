@@ -2,4 +2,4 @@
   data:
     bespoke-hash: vue
 - source: ./intro.md
-- source: ../demo/index.html
+- source: ../demo/index.vue

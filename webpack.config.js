@@ -30,6 +30,10 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/
          },
+         {  // load vue components with vue-loader
+            test: /\.vue$/,
+            loader: 'vue-loader'
+         },
          {  // load yaml
             test: /\.yml$/,
             loader: 'json-loader!yaml-loader'
