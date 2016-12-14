@@ -43,12 +43,15 @@ function init(slides) {
          e.stopPropagation();
       }
    }
-   deck.on('activate', function(slide) {
+   deck.on('activate', slide => {
       if( slide.index === 2 ) {
          container.addEventListener('keydown', noFullscreenToggle);
+         setTimeout(() => {
+            container.querySelector('input.new-todo').focus();
+         }, 500);
       }
    });
-   deck.on('deactivate', function(slide) {
+   deck.on('deactivate', slide => {
       if( slide.index === 2 ) {
          container.removeEventListener('keydown', noFullscreenToggle);
       }
