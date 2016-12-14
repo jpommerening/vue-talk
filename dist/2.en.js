@@ -1,0 +1,2 @@
+webpackJsonp([2],{5:function(t,e,a){t.exports=a.p+"assets/vue-9a0f68.png"},78:function(t,e,a){t.exports="<img src="+a(5)+' alt="vue logo" class=plain /> <h1 class=name>Vue.js</h1> '},83:function(t,e,a){var n=[{html:a(78),data:{"bespoke-hash":"vue"}}];t.exports=n.map(function(t){var e=document.createElement("section");return e.innerHTML=t.html,Object.keys(t.data).forEach(function(a){e.setAttribute("data-"+a,t.data[a])}),e})}});
+//# sourceMappingURL=en.js.map

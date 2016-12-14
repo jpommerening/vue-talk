@@ -1,3 +1,5 @@
 - source: ./title.md
   data:
     bespoke-hash: vue
+- source: ./intro.md
+- source: ../demo/index.html

@@ -1,9 +1,10 @@
 @import 'theme.scss';
 @import 'highlight.scss';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono');
 @import url('https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono');
 
-
+@import 'todomvc.scss';
 
 .name {
   font-family: 'Dosis';
@@ -49,3 +50,28 @@ img.plain {
   left: 22%;
 }
 
+@mixin reel($prefix, $transforms: scale(1)) {
+  transition: 0.4s ease-in-out transform, 0.4s ease-in-out opacity;
+
+  &.#{$prefix}-active {
+    opacity: 1;
+    transform: $transforms translate(0, 0);
+  }
+  &.#{$prefix}-inactive {
+    opacity: 0;
+  }
+  &.#{$prefix}-before {
+    transform: $transforms translate(0, -110%);
+  }
+  &.#{$prefix}-after {
+    transform: $transforms translate(0, 110%);
+  }
+}
+
+.bespoke-slide {
+  @include reel(bespoke);
+}
+
+body.notes .bespoke-slide {
+  @include reel(bespoke, scale(0.594) translate(-50%, 0));
+}
