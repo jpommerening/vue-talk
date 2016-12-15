@@ -8,6 +8,7 @@ module.exports = function( code ) {
    }
 
    var output = [
+      'var Vue = require( \'vue\' );',
       'var empty = function() { return ""; }',
       'var slides = [',
       slides.map( function( slide ) {
@@ -27,12 +28,13 @@ module.exports = function( code ) {
       '      } );',
       '      return section;',
       '   }',
-      '   if( typeof slide.html === \'object\' && slide.html._Ctor ) {',
-      '      var Vue = require( \'vue\' );',
+      '   if( typeof slide.html === \'object\' ) {',
       '      var component = new Vue( slide.html );',
       '      component.$mount();',
       '      return component.$el;',
       '   }',
+      '} ).filter( function( slide ) {',
+      '   return !!slide;',
       '} );',
    ].join( '\n' );
    return output;

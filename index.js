@@ -19,7 +19,11 @@ let slide = 0;
 function init(slides) {
    const container = document.querySelector( '#talk' );
    const first = container.querySelector( 'section' );
-   slides.forEach( element => container.insertBefore( element, first ) );
+   const add = first ?
+      element => { container.insertBefore( element, first ); } :
+      element => { container.appendChild( element ); };
+
+   slides.forEach( add );
 
    deck = bespoke.from( container, [
       backdrop(),
