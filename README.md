@@ -6,7 +6,7 @@ Slides are in [`slides/de`](slides/de). Translation: later.
 
 Vue.js demo in [`slides/demo`](slides/demo).
 
-To view the prebuilt presentation (no node-js required) just open the [`index.html`](index.html) file.
+To view the prebuilt presentation (no NodeJS required) just open the [`index.html`](index.html) file.
 
 To build and run locally, clone this repo and:
 
