@@ -39,7 +39,7 @@
                </li>
             </ul>
             <!-- Hidden if no completed items are left ↓ -->
-            <button class="clear-completed">Clear completed</button>
+            <button class="clear-completed" v-if="completed.length" @click="clear">Clear completed</button>
          </footer>
       </div>
    </section>
@@ -74,14 +74,19 @@ const store = new Vuex.Store({
             completed: false
          } );
       },
+      remove( state, { item } ) {
+         state.items.splice( state.items.indexOf( item ), 1 );
+      },
       complete( state, { item, completed = true } ) {
          item.completed = completed;
       },
+      clear( state ) {
+         state.items.forEach( item => {
+            state.items.splice( state.items.indexOf( item ) );
+         } );
+      },
       edit( state, { item, editing = true } ) {
          item.editing = editing;
-      },
-      remove( state, { item } ) {
-         state.items.splice( state.items.indexOf( item ), 1 );
       }
    }
 });
@@ -113,6 +118,9 @@ export default {
       },
       complete( item, completed ) {
          this.$store.commit('complete', { item, completed });
+      },
+      clear() {
+         this.$store.commit('clear');
       },
       edit( item, editing ) {
          this.$store.commit('edit', { item, editing });
