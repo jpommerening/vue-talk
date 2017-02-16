@@ -82,7 +82,9 @@ const store = new Vuex.Store({
       },
       clear( state ) {
          state.items.forEach( item => {
-            state.items.splice( state.items.indexOf( item ) );
+            if( item.completed ) {
+               state.items.splice( state.items.indexOf( item ) );
+            }
          } );
       },
       edit( state, { item, editing = true } ) {
